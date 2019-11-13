@@ -12,7 +12,9 @@
 #import "Mobile.h"
 #import <objc/runtime.h>
 
-#import "Method-Swizzling/SwizzlingObject.h"
+#import "MessageForwardObject.h"
+
+#import "SwizzlingObject.h"
 
 @interface ViewController ()
 
@@ -51,19 +53,25 @@
 //    [self class] 的方法的接收者是 self ,最终会通过实例方法找到 NSObject 中.调用从 NSObject 继承的实例方法.
 //    [super class] 的方法的接收者还是 self ,不同的在于直接从父类开始查找 class 实例方法,最终还是会找到 NSObject 中.调用从 NSObject 继承的实例方法.
     
+
+//    5.学习Message-Forward
+//    [self learnMethoSwizzling];
     
-//    5.学习Method-Swizzling;
-    [self learnMethoSwizzling];
+//    6.学习Method-Swizzling;
+//    [self learnMethoSwizzling];
 }
 
 - (void)learnMethoSwizzling {
+    MessageForwardObject *obj = [[MessageForwardObject alloc] init];
+    [obj eating];
+}
+
+- (void)learnMessageForwarding {
     SwizzlingObject *obj = [[SwizzlingObject alloc] init];
-    
     [obj test];
 //    [obj otherTest];
-    
-    
 }
+
 
 
 
