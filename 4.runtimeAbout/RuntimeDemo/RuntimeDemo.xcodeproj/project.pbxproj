@@ -18,6 +18,7 @@
 		429D8622237AA91400F4DFD0 /* Mobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 429D8621237AA91400F4DFD0 /* Mobile.m */; };
 		429D8626237BE53200F4DFD0 /* SwizzlingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 429D8625237BE53200F4DFD0 /* SwizzlingObject.m */; };
 		429D862D237BEE6700F4DFD0 /* MessageForwardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 429D862C237BEE6700F4DFD0 /* MessageForwardObject.m */; };
+		429D8631237BF51000F4DFD0 /* AddMethodObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 429D8630237BF51000F4DFD0 /* AddMethodObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		429D8625237BE53200F4DFD0 /* SwizzlingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwizzlingObject.m; sourceTree = "<group>"; };
 		429D862B237BEE6700F4DFD0 /* MessageForwardObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageForwardObject.h; sourceTree = "<group>"; };
 		429D862C237BEE6700F4DFD0 /* MessageForwardObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageForwardObject.m; sourceTree = "<group>"; };
+		429D862F237BF51000F4DFD0 /* AddMethodObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMethodObject.h; sourceTree = "<group>"; };
+		429D8630237BF51000F4DFD0 /* AddMethodObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMethodObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 		429D85FF237AA42A00F4DFD0 /* RuntimeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				429D862E237BF4FC00F4DFD0 /* Add-Method */,
 				429D8627237BEDD900F4DFD0 /* Message-Forwarding */,
 				429D8623237BE50F00F4DFD0 /* Method-Swizzling */,
 				429D8619237AA44000F4DFD0 /* Object-Class-MataClass */,
@@ -118,6 +122,15 @@
 				429D862C237BEE6700F4DFD0 /* MessageForwardObject.m */,
 			);
 			path = "Message-Forwarding";
+			sourceTree = "<group>";
+		};
+		429D862E237BF4FC00F4DFD0 /* Add-Method */ = {
+			isa = PBXGroup;
+			children = (
+				429D862F237BF51000F4DFD0 /* AddMethodObject.h */,
+				429D8630237BF51000F4DFD0 /* AddMethodObject.m */,
+			);
+			path = "Add-Method";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +209,7 @@
 				429D8602237AA42A00F4DFD0 /* AppDelegate.m in Sources */,
 				429D8613237AA42C00F4DFD0 /* main.m in Sources */,
 				429D8622237AA91400F4DFD0 /* Mobile.m in Sources */,
+				429D8631237BF51000F4DFD0 /* AddMethodObject.m in Sources */,
 				429D861F237AA52800F4DFD0 /* NSObject+RuntimeTest.m in Sources */,
 				429D861C237AA50B00F4DFD0 /* SubObject.m in Sources */,
 			);

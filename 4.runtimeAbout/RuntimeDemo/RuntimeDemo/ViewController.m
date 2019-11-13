@@ -12,6 +12,8 @@
 #import "Mobile.h"
 #import <objc/runtime.h>
 
+#import "AddMethodObject.h"
+
 #import "MessageForwardObject.h"
 
 #import "SwizzlingObject.h"
@@ -58,10 +60,14 @@
 //    [self learnMethoSwizzling];
     
 //    6.学习Method-Swizzling;
-//    [self learnMethoSwizzling];
+//    [self learnMethodSwizzling];
+    
+
+//    7.学习Add-Method;
+    [self learnAddMethod];
 }
 
-- (void)learnMethoSwizzling {
+- (void)learnMethodSwizzling {
     MessageForwardObject *obj = [[MessageForwardObject alloc] init];
     [obj eating];
 }
@@ -72,7 +78,20 @@
 //    [obj otherTest];
 }
 
+- (void)learnAddMethod {
+    AddMethodObject *obj = [[AddMethodObject alloc] init];
+    IMP dynamicMethodImp = class_getMethodImplementation([self class], @selector(dynamicMethodImp));
 
+    // v 代表返回值是 void 类型的
+    // @ 代表第一个参数类型是 id,即 self
+    // : 代表第二个参数是 SEL 类型的 即 @
+    class_addMethod([obj class], @selector(dynamicMethod), dynamicMethodImp, "v@:");
+    [obj performSelector:@selector(dynamicMethod)];
+    
+}
 
+- (void)dynamicMethodImp {
+    NSLog(@"DynamicMethodImp invoked from %@ class",NSStringFromClass([self class]));
+}
 
 @end
